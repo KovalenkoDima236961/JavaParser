@@ -26,8 +26,12 @@ public class Main {
 
 
         ParsingInfo info = new ParsingInfo();
-        info.parse();
-        info.writeTitles();
+        try {
+            info.parse();
+            info.writeToCsv("movie.csv");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
 
     }
 }
